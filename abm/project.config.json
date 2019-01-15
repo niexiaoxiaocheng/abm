@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
+	"appid": "wxaaed3e688133ea57",
 	"projectname": "abm",
 	"condition": {
 		"search": {
