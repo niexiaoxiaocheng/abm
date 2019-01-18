@@ -2,7 +2,10 @@
     "editor.tabSize": 2,
     "editor.detectIndentation": false,
     "[js]": {
-        "editor.tabSize": 2,
-        "editor.detectIndentation": false
+      "editor.tabSize": 2,
+      "editor.detectIndentation": false
+    },
+    "[vue]": {
+      "editor.tabSize": 2,
     }
 }

@@ -1,40 +1,31 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+  <div class="grid-content">
+    <mp-grid :gridData="gridData"></mp-grid>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
+import mpGrid from 'mpvue-weui/src/grid';
 
 export default {
   data () {
     return {
-      motto: 'Hello World',
-      userInfo: {}
+      gridData: [
+        { src: '/static/images/icon_nav_button.png', name: '借书记录', url: '/pages/book/detail/main' },
+        { src: '/static/images/icon_nav_cell.png', name: '当前借书', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_toast.png', name: '搜索书籍', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_dialog.png', name: '智能推荐', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_button.png', name: '图书借阅', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_panel.png', name: '图书捐赠', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_article.png', name: '新书登记', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_actionSheet.png', name: '查找图书', url: '/pages/book/detail/main'  },
+        { src: '/static/images/icon_nav_icons.png', name: 'Icons', url: '/pages/book/detail/main'  }
+      ]
     }
   },
 
   components: {
-    card
+    mpGrid
   },
 
   methods: {
@@ -67,39 +58,5 @@ export default {
 </script>
 
 <style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-
-.counter {
-  display: inline-block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
-}
 </style>
