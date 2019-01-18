@@ -8,7 +8,11 @@
         <label class="detail-name">书籍所属人:</label><label class="detail-value" v-text="owner"></label>
       </div>
       <div class="detail-row">
-        <label class="detail-name">书籍图片:</label><label class="detail-value" v-text="images"></label>
+        <label class="detail-name">书籍图片:</label>
+        <div class="book-image">
+          <img v-for="(index, image) in images" v-bind:key="index" :src="image.src" class="image-content"/>
+        </div>
+        <label class="detail-value" v-text="images"></label>
       </div>
       <div class="detail-row">
         <label class="detail-name">书籍介绍:</label><label class="detail-value" v-text="description"></label>
